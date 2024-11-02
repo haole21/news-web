@@ -1,16 +1,4 @@
-<?php
-require"config.php";
-require"model/db.php";
-require"model/categories.php";
-require"model/item.php";
-require"model/author.php";
-$item = new Item();
-$category = new category();
-$author = new Author(); 
-$getAllItem = $item->getAllItem();
-$getAllCate = $category->getAllCate();
-$getAllAuthor = $author->getAllAuthor();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

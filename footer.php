@@ -1,11 +1,5 @@
  <!-- Footer Start -->
-  <?php
-   require "config.php";
-   require "model/db.php";
-   require "model/categories.php";
-   $category =  new category();
-   $getAllCate = $category->getAllCate();
-  ?>
+
  <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
         <div class="row py-4">
             <div class="col-lg-3 col-md-6 mb-5">
@@ -24,27 +18,22 @@
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Popular News</h5>
+                <?php foreach ($getPopularItem as $key => $value){?>
                 <div class="mb-3">
                     <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""> <?php echo $getNameCateById = $category->getNameCateById($value['CATEGORY'] )[0]['NAME']; ?></a>
+                        <a class="text-body" href=""><small><?php 
+                         $mystring = $value['CREATE_AT'];
+                         $arr = explode("-", $mystring, 3);
+                         $date = date_create(substr($arr[2],0,2) . "-" . $arr[1] . "-" . $arr[0]);
+                         echo date_format($date, " F  d , Y");                       
+                        ?></small></a>
                     </div>
-                    <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                    <a class="small text-body text-uppercase font-weight-medium" href=""><?php echo $value['TITLE'] ;?></a>
                 </div>
-                <div class="mb-3">
-                    <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                    </div>
-                    <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-                </div>
-                <div class="">
-                    <div class="mb-2">
-                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                    </div>
-                    <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-                </div>
+               
+              <?php  }?>
+       
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
