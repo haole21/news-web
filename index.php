@@ -13,7 +13,8 @@ $getAllAuthor = $author->getAllAuthor();
 $getPopularItem = $item->getPopularItem();
 $getFeatureItem = $item ->getFeatureItem();
 $getTrandingBusinessItem = $item->getTrandingBusinessItem();
-
+$get4LatestItem = $item ->get4LatestItem();
+$get4NextLatestItem =$item ->get4NextLatestItem();
 ?>
 <?php 
 include "header.php";

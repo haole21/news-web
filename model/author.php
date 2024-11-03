@@ -7,5 +7,12 @@ class Author extends db {
        $author = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
        return $author ; 
     }
+    public function getNameAuthorByID($id){
+        $sql = self::$connection->prepare("SELECT * FROM `users` WHERE ID = ".$id."");
+        $sql->execute();
+        $author = array();
+        $author = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $author ; 
+    }
 }
 ?>

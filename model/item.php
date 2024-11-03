@@ -21,8 +21,15 @@ public function getFeatureItem(){
   $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
   return $items ; 
 }
-public function getLatestItem(){
+public function get4LatestItem(){
   $sql = self::$connection -> prepare("SELECT * FROM `items`  ORDER BY`CREATE_AT`DESC LIMIT 4 ");
+  $sql ->execute();
+  $items = array();
+  $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+  return $items ; 
+}
+public function get4NextLatestItem(){
+  $sql = self::$connection -> prepare("SELECT * FROM `items`  ORDER BY`CREATE_AT`DESC LIMIT 4,4 ");
   $sql ->execute();
   $items = array();
   $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
