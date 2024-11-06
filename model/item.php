@@ -42,5 +42,12 @@ public function getTrandingBusinessItem(){
   $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
   return $items ; 
 }
+public function getNext4LatestfromPrevious4Items(){
+  $sql = self::$connection->prepare("SELECT * FROM `items`  ORDER BY`CREATE_AT`DESC LIMIT 8,4 ");
+  $sql ->execute();
+  $items = array();
+  $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+  return $items ; 
+}
  }
 ?>

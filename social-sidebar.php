@@ -51,7 +51,7 @@
                         <div class="bg-white border border-top-0 p-3">
                         <?php foreach ($getTrandingBusinessItem as $key => $value){?>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                                <img style="max-width: 35%; height: 100%;" src="img_news/<?php  echo $value['IMAGE'] ?>" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $getNameCateById = $category->getNameCateById($value['CATEGORY'] )[0]['NAME']; ?></a>
@@ -59,7 +59,7 @@
                          $mystring = $value['CREATE_AT'];
                          $arr = explode("-", $mystring, 3);
                          $date = date_create(substr($arr[2],0,2) . "-" . $arr[1] . "-" . $arr[0]);
-                         echo date_format($date, " F  d , Y");                       
+                         echo date_format($date, " M d, Y");                       
                         ?></small></a>
                                     </div>
                                     <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href=""><?php echo substr($value['TITLE'],0,30)."..."  ;?></a>
@@ -95,16 +95,9 @@
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex flex-wrap m-n1">
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                                <?php foreach($getAllCate as $key=>$value){?>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1"><?php echo $value['NAME'] ?></a>
+                                <?php }?>
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,7 @@
                          $mystring = $value['CREATE_AT'];
                          $arr = explode("-", $mystring, 3);
                          $date = date_create(substr($arr[2],0,2) . "-" . $arr[1] . "-" . $arr[0]);
-                         echo date_format($date, " F  d , Y");                       
+                         echo date_format($date, " M  d , Y");                       
                         ?></small></a>
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href=""><?php echo substr($value['TITLE'],0,30)."..."  ;?></a>
