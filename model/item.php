@@ -49,5 +49,15 @@ public function getNext4LatestfromPrevious4Items(){
   $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
   return $items ; 
 }
+public function getSreach($key,$start ,$end) {
+  $sql = self::$connection->prepare("SELECT * FROM `items` WHERE CONTENT LIKE ?  LIMIT ?,?");
+  $keys = "%$key%";
+  $sql ->bind_param("sii",$keys,$start,$end);
+  $sql ->execute();
+  $items = array();
+  $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+  return $items ; 
+}
  }
+
 ?>

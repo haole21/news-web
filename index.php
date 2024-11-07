@@ -16,6 +16,7 @@ $getTrandingBusinessItem = $item->getTrandingBusinessItem();
 $get4LatestItem = $item ->get4LatestItem();
 $get4NextLatestItem =$item ->get4NextLatestItem();
 $getgetNext4LatestfromPrevious4Items= $item->getNext4LatestfromPrevious4Items();
+
 ?>
 <?php 
 include "header.php";

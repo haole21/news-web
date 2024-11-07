@@ -33,7 +33,7 @@
                         ?></small></a>
                                     </div>
                                     <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo substr($value['TITLE'],0,34)."..."  ;?></a>
-                                    <p class="m-0"><?php echo substr($value['TITLE'],0,100) ; ?></p>
+                                    <p class="m-0"><?php echo substr($value['EXCERTP'],0,100) ; ?></p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                     <div class="d-flex align-items-center">
