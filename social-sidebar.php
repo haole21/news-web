@@ -59,10 +59,10 @@
                          $mystring = $value['CREATE_AT'];
                          $arr = explode("-", $mystring, 3);
                          $date = date_create(substr($arr[2],0,2) . "-" . $arr[1] . "-" . $arr[0]);
-                         echo date_format($date, " M d, Y");                       
+                         echo date_format($date, "M d, Y");                       
                         ?></small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href=""><?php echo substr($value['TITLE'],0,30)."..."  ;?></a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['ID'];?>"><?php echo substr($value['TITLE'],0,30)."..."  ;?></a>
                                 </div>
                             </div>
                             <?php  }?>

@@ -1,3 +1,4 @@
+
 <div class="container-fluid pt-5 mb-3">
         <div class="container">
             <div class="section-title">
@@ -18,7 +19,7 @@
                          echo date_format($date, " M  d , Y");                       
                         ?></small></a>
                         </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href=""><?php echo substr($value['TITLE'],0,30)."..."  ;?></a>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="single.php?id=<?php echo $value['ID'];?>"><?php echo substr($value['TITLE'],0,30)."..."  ;?></a>
                     </div>
                 </div>
                 <?php  }?>

@@ -32,7 +32,7 @@
                          echo date_format($date, " F  d , Y");                       
                         ?></small></a>
                                     </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo substr($value['TITLE'],0,34)."..."  ;?></a>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['ID'];?>"><?php echo substr($value['TITLE'],0,34)."..."  ;?></a>
                                     <p class="m-0"><?php echo substr($value['EXCERTP'],0,100) ; ?></p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -71,7 +71,7 @@
                          echo date_format($date, " M  d , Y");                       
                         ?></small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href=""><?php echo substr( $getgetNext4LatestfromPrevious4Items[$key]['TITLE'],0,30)."..."  ;?></a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['ID'];?>"><?php echo substr( $getgetNext4LatestfromPrevious4Items[$key]['TITLE'],0,30)."..."  ;?></a>
                                 </div>
                             </div>
                             <?php } ?>

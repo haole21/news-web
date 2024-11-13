@@ -58,6 +58,15 @@ public function getSreach($key,$start ,$end) {
   $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
   return $items ; 
 }
+public function getItemByID($id){
+  $sql = self::$connection->prepare("SELECT * FROM `items` WHERE ID = ?");
+  $sql ->bind_param('i',$id);
+  $sql ->execute();
+  $items = array();
+  $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+  return $items ; 
  }
+ }
+ 
 
 ?>
