@@ -89,13 +89,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="index.php" class="nav-item nav-link active">Home</a>
+                    <a href="index.php" class="nav-item nav-link <?php echo ($_SERVER['PHP_SELF']=="/BE/news-web/index.php" )? "active":"" ;?>">Home</a>
                    
                       <?php 
+                      $arr = array('1'=>"ThoiSu", '2'=>"GocNhin",'3'=>"TheGioi",'4'=>"KhoaHoc",'5'=>"GiaiTri",'6'=>"KinhDoanh");
+                      
+                      $i = 1 ; 
                       foreach($getAllCate as $key => $value){
+                          
+                     
 
                       ?>
-                       <a href="category.html" class="nav-item nav-link"><?php  echo $value['NAME'];?></a>
+                       <a href= "<?php   echo($arr[$i].".php"); ?>" class="nav-item nav-link <?php echo ($_SERVER['PHP_SELF']== "/BE/news-web/". $arr[$i].".php" )? "active":"" ; $i++;?>"><?php  echo $value['NAME'];?></a>
                       <?php
                       }
                       ?>
